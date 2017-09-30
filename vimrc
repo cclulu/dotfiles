@@ -15,12 +15,11 @@ set expandtab                     " expands tabs to spaces
 set autoindent                    " take indent for new line from previous line
 set smartindent                   " enable smart indentation
 set clipboard=unnamed
-"set relativenumber                " show relative numbers in the ruler
 set nowrap                         " don't wrap lines
 set ruler
 set shiftwidth=2
 set expandtab
-set scrolloff=3
+set scrolloff=6
 set wildmode=longest:list                    " better command line completion
 set hlsearch
 
@@ -42,7 +41,6 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
-let g:go_auto_sameids = 1
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 
