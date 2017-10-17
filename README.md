@@ -1,3 +1,3 @@
-#Workstation
+Workstation
 
-###basic things i would use to start working
+basic things i would use to start working
