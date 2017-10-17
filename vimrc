@@ -2,6 +2,7 @@
 syntax on
 filetype off                  " required
 set number
+set autowrite
 set noswapfile
 set noerrorbells                  " No bells!
 set novisualbell                  " I said, no bells!
@@ -22,6 +23,13 @@ set expandtab
 set scrolloff=6
 set wildmode=longest:list                    " better command line completion
 set hlsearch
+set backspace=indent,eol,start
+set ignorecase
+set infercase
+set smartcase
+set incsearch
+set showmatch
+set showcmd
 
 "
 " better visual highlight
@@ -105,6 +113,16 @@ Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
 Plugin 'epmatsw/ag.vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+"------ these are needed for snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'trayo/vim-ginkgo-snippets'
+Plugin 'trayo/vim-gomega-snippets'
+"------
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
