@@ -3,6 +3,7 @@ set rtp+=/usr/local/go/misc/vim
 filetype plugin indent on
 syntax on
 syntax enable 
+set background=dark
 filetype off                  " required
 
 set number
@@ -133,6 +134,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'epmatsw/ag.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-repeat'
 "------ these are needed for snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -157,3 +159,4 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+colorscheme solarized

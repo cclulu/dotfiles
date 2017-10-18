@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/cuahuctemocosorio/.oh-my-zsh
+export EDITOR=vim
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,10 +53,8 @@ ZSH_THEME="pygmalion"
 plugins=(git)
 
 # User configuration
-# setup GO
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+# setup GO
 export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
@@ -77,6 +76,9 @@ source $HOME/.bash_profile
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# load rbenv
+eval "$(rbenv init -)"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -103,7 +105,6 @@ alias gti="echo 'le beep beep' && echo && echo && gti"
 alias vimrc="vim ~/.vimrc"
 
 # rebase #
-alias gdca="amend"
 alias amend="git commit --amend --reset-author"
 alias continue="git rebase --continue"
 alias cont="git rebase --continue"
