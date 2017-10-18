@@ -1,6 +1,10 @@
 " ========== VIM basic setup ==========
+set rtp+=/usr/local/go/misc/vim
+filetype plugin indent on
 syntax on
+syntax enable 
 filetype off                  " required
+
 set number
 set autowrite
 set noswapfile
@@ -34,10 +38,13 @@ set showcmd
 "
 " better visual highlight
 " " 12 is good for fg
-highlight Visual ctermfg=4 ctermbg=7
-highlight Visual guifg=#2E8CCF guibg=#EEE8D6
-highlight Cursor guifg=black guibg=white"
-hi Search cterm=inverse ctermfg=black
+" change highlight text colors
+highlight Visual ctermfg=15 ctermbg=8
+highlight Search ctermfg=16
+" highlight Visual ctermfg=4 ctermbg=7
+" highlight Visual guifg=#2E8CCF guibg=#EEE8D6
+" highlight Cursor guifg=black guibg=white"
+" hi Search cterm=inverse ctermfg=black
 
 
 " ======= vim-go enabling features ========
@@ -51,14 +58,16 @@ let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
-
+let g:go_fmt_fail_silently = 1
 
 " ======= add auto pairs shortcut ======
 let g:AutoPairsShortcutToggle = '<C-t>'
 
 " ====== syntastic options set =====
-let g:syntastic_go_checkers = ['go']
+let g:syntastic_go_checkers = ['go', 'gofmt']
 let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " ====== ignore certain folders with ctrl+p =====
 if exists('g:ctrlp_user_command')
@@ -88,6 +97,16 @@ vnoremap . :norm.<CR>a
 "  spacebar sends no highlight
 nnoremap <Space> :noh<CR>
 
+" write/quit mappings
+command W :w!
+command Q :q!
+
+" ======= move lines up and down =======
+" uses ctrl-j and ctrl-k
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " close vim if NERDTree is the only open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
