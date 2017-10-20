@@ -13,6 +13,9 @@
   - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 - link:
+    ~/.tmux.conf:
+      force: true
+      path: tmux.conf
     ~/.zshrc:
       force: true
       path: zshrc

@@ -32,7 +32,4 @@ eval "$(rbenv init -)"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# unset s so that `brew install s` will still work
-unalias s
-
 eval "$(direnv hook zsh)"
