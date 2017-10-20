@@ -17,8 +17,8 @@ set clipboard=unnamed
 set copyindent
 set expandtab
 set expandtab                     " expands tabs to spaces
-set hlsearch
 set hidden
+set hlsearch
 set ignorecase
 set incsearch
 set infercase
@@ -32,8 +32,8 @@ set scrolloff=2                   " adds top/bottom buffer between cursor and wi
 set scrolloff=6
 set shiftwidth=2
 set showcmd
-set showmode
 set showmatch
+set showmode
 set smartcase
 set smartindent                   " enable smart indentation
 set softtabstop=2
@@ -41,6 +41,7 @@ set splitbelow                    " sets vim splits to default right and bottom
 set splitright
 set tabstop=2
 set title                         " let vim set the terminal title
+set undolevels=1000      " use many muchos levels of undo
 
 set wildmenu                    " make tab completion for files/buffers act like bash
 set wildmode=list:full          " show a list when pressing tab and complete
