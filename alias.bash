@@ -6,6 +6,7 @@ alias gapa='git add --patch'
 alias gaa="git add -A"
 alias gs="git status"
 alias ga="git add"
+alias gc="git commit"
 alias gti="echo 'le beep beep' && echo && echo && gti"
 alias vundle="vim +PluginInstall +qall"
 

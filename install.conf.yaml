@@ -9,8 +9,8 @@
   - sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 #installing vundle
-- shell:
-  - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# - shell:
+#   - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 - link:
      #tmux configuration
@@ -40,8 +40,8 @@
       path: z
 
 #installing vim plugins with alias
-- shell:
-  - vundle
+# - shell:
+#   - vundle
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
