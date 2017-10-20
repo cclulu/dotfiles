@@ -1,40 +1,40 @@
 " ========== VIM basic setup ==========
-set rtp+=/usr/local/go/misc/vim
-filetype plugin indent on
-syntax on
-syntax enable 
-set background=dark
 filetype off                  " required
+filetype plugin indent on
+set background=dark
+set rtp+=/usr/local/go/misc/vim
+syntax enable 
+syntax on
 
-set number
+set autoindent                    " take indent for new line from previous line
 set autowrite
-set noswapfile
+set backspace=indent,eol,start
+set clipboard=unnamed
+set expandtab
+set expandtab                     " expands tabs to spaces
+set hlsearch
+set ignorecase
+set incsearch
+set infercase
 set noerrorbells                  " No bells!
+set noswapfile
 set novisualbell                  " I said, no bells!
-set softtabstop=2
-set tabstop=2
+set nowrap                         " don't wrap lines
+set number
+set ruler
 set scrolloff=2                   " adds top/bottom buffer between cursor and window
+set scrolloff=6
+set shiftwidth=2
+set showcmd
+set showmatch
+set smartcase
+set smartindent                   " enable smart indentation
+set softtabstop=2
 set splitbelow                    " sets vim splits to default right and bottom
 set splitright
+set tabstop=2
 set title                         " let vim set the terminal title
-set expandtab                     " expands tabs to spaces
-set autoindent                    " take indent for new line from previous line
-set smartindent                   " enable smart indentation
-set clipboard=unnamed
-set nowrap                         " don't wrap lines
-set ruler
-set shiftwidth=2
-set expandtab
-set scrolloff=6
 set wildmode=longest:list                    " better command line completion
-set hlsearch
-set backspace=indent,eol,start
-set ignorecase
-set infercase
-set smartcase
-set incsearch
-set showmatch
-set showcmd
 
 "
 " better visual highlight
@@ -49,6 +49,9 @@ highlight Search ctermfg=16
 
 
 " ======= vim-go enabling features ========
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -57,18 +60,15 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
-let g:go_fmt_command = "goimports"
-let g:go_auto_type_info = 1
-let g:go_fmt_fail_silently = 1
 
 " ======= add auto pairs shortcut ======
 let g:AutoPairsShortcutToggle = '<C-t>'
 
 " ====== syntastic options set =====
-let g:syntastic_go_checkers = ['go', 'gofmt']
-let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=1
+let g:syntastic_go_checkers = ['go', 'gofmt']
 
 " ====== ignore certain folders with ctrl+p =====
 if exists('g:ctrlp_user_command')
@@ -126,21 +126,23 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'fatih/vim-go'
-Plugin 'scrooloose/syntastic'
-Plugin 'epmatsw/ag.vim'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'epmatsw/ag.vim'
+Plugin 'fatih/vim-go'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
 "------ these are needed for snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'tomtom/tlib_vim'
 Plugin 'trayo/vim-ginkgo-snippets'
 Plugin 'trayo/vim-gomega-snippets'
 "------
