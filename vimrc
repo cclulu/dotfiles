@@ -6,13 +6,19 @@ set rtp+=/usr/local/go/misc/vim
 syntax enable 
 syntax on
 
+
+" ========== vundle ==========
+" source ~/.vim/vundle/plugins.vim
+
 set autoindent                    " take indent for new line from previous line
 set autowrite
 set backspace=indent,eol,start
 set clipboard=unnamed
+set copyindent
 set expandtab
 set expandtab                     " expands tabs to spaces
 set hlsearch
+set hidden
 set ignorecase
 set incsearch
 set infercase
@@ -26,6 +32,7 @@ set scrolloff=2                   " adds top/bottom buffer between cursor and wi
 set scrolloff=6
 set shiftwidth=2
 set showcmd
+set showmode
 set showmatch
 set smartcase
 set smartindent                   " enable smart indentation
@@ -34,8 +41,18 @@ set splitbelow                    " sets vim splits to default right and bottom
 set splitright
 set tabstop=2
 set title                         " let vim set the terminal title
-set wildmode=longest:list                    " better command line completion
 
+set wildmenu                    " make tab completion for files/buffers act like bash
+set wildmode=list:full          " show a list when pressing tab and complete
+                                "    first full match
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
+set mouse=a                     " enable using the mouse if terminal emulator
+                                "    supports it (xterm does)
+
+set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
+                                "    paste mode, where you can paste mass data
+                                "    that won't be autoindented
 "
 " better visual highlight
 " " 12 is good for fg
@@ -82,7 +99,7 @@ map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
-
+inoremap jj <ESC>
 map <leader>w   ^Ww
 map <leader>l   ^Wl
 map <leader>j   ^Wj
@@ -97,10 +114,9 @@ vnoremap . :norm.<CR>a
 
 "  spacebar sends no highlight
 nnoremap <Space> :noh<CR>
-
-" write/quit mappings
-command W :w!
-command Q :q!
+" Speed up scrolling of the viewport slightly
+ nnoremap <C-e> 2<C-e>
+ nnoremap <C-y> 2<C-y>
 
 " ======= move lines up and down =======
 " uses ctrl-j and ctrl-k
@@ -116,6 +132,9 @@ let mapleader = ","
 let maplocalleader = ";"
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:syntastic_enable_signs=1
+let NERDTreeIgnore=['.DS_Store']
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " ========== vundle plugins ==========
 " set the runtime path to include Vundle and initialize
@@ -126,6 +145,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ekalinin/Dockerfile.vim'
