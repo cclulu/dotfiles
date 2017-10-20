@@ -25,6 +25,11 @@
     ~/.vimrc:
       force: true
       path: vimrc
+      # my custom terminal prompt
+      # with a modified standard prompt
+    ~/.oh-my-zsh/themes/pygmalion.zsh-theme:
+      force: true
+      path: pygmalion.zsh-theme
 
 #installing vim plugins with alias
 - shell:
