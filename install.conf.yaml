@@ -1,0 +1,15 @@
+- clean: ['~']
+
+- shell: 
+  - brew bundle
+
+- link:
+    ~/.vim:
+      force: true
+      path: vim/
+    ~/.vimrc:
+      force: true
+      path: vimrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
