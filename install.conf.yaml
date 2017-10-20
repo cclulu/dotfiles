@@ -13,15 +13,19 @@
   - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 - link:
+     #tmux configuration
     ~/.tmux.conf:
       force: true
       path: tmux.conf
+      #zshrc configuration
     ~/.zshrc:
       force: true
       path: zshrc
+      #setting plugins folder
     ~/.vim:
       force: true
       path: vim/
+      #setting up vim conf
     ~/.vimrc:
       force: true
       path: vimrc
@@ -30,6 +34,10 @@
     ~/.oh-my-zsh/themes/pygmalion.zsh-theme:
       force: true
       path: pygmalion.zsh-theme
+      #rupa/z jump around
+    ~/z:
+      force: true
+      path: z
 
 #installing vim plugins with alias
 - shell:

@@ -19,7 +19,9 @@ export PATH=$HOME/bin:$PATH
 
 export EVENT_NOKQUEUE=1
 
+# rupa/z - jump around 
 . ~/z/z.sh
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_profile
 

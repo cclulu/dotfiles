@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-gomega-snippets"]
 	path = vim/bundle/vim-gomega-snippets
 	url = https://github.com/trayo/vim-gomega-snippets.git
+[submodule "z"]
+	path = z
+	url = https://github.com/rupa/z
