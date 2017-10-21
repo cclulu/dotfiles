@@ -26,6 +26,7 @@ set incsearch
 set infercase
 set noerrorbells                  " No bells!
 set noswapfile
+set hls                         " search with highlights by default
 set novisualbell                  " I said, no bells!
 set nowrap                         " don't wrap lines
 set number
@@ -60,8 +61,15 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
 " better visual highlight
 " " 12 is good for fg
 " change highlight text colors
-highlight Visual ctermfg=15 ctermbg=8
-highlight Search ctermfg=16
+" highlight Visual ctermfg=15 ctermbg=8
+" highlight Search ctermfg=16
+
+highlight Visual ctermfg=4 ctermbg=7
+highlight Visual guifg=#2E8CCF guibg=#EEE8D6
+highlight Cursor guifg=black guibg=white
+
+" makes highlight searching very visible
+hi Search cterm=inverse ctermfg=white
 " highlight Visual ctermfg=4 ctermbg=7
 " highlight Visual guifg=#2E8CCF guibg=#EEE8D6
 " highlight Cursor guifg=black guibg=white"
@@ -118,8 +126,8 @@ vnoremap . :norm.<CR>a
 "  spacebar sends no highlight
 nnoremap <Space> :noh<CR>
 " Speed up scrolling of the viewport slightly
- nnoremap <C-e> 2<C-e>
- nnoremap <C-y> 2<C-y>
+ nnoremap <C-e> 3<C-e>
+ nnoremap <C-y> 3<C-y>
 
 " ======= move lines up and down =======
 " uses ctrl-j and ctrl-k
