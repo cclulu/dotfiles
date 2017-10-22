@@ -18,6 +18,7 @@ alias abort="git rebase --abort"
 alias gingko="ginkgo"
 alias vi="vim"
 alias vmi="vim"
+alias v="vim"
 alias psuh="push"
 
 # ======= plugins ======

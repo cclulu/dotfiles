@@ -17,6 +17,7 @@ set autowrite
 set backspace=indent,eol,start
 set clipboard=unnamed
 set copyindent
+set nocompatible                  " choose no compatibility with legacy vi
 set expandtab
 set expandtab                     " expands tabs to spaces
 set hidden
@@ -44,6 +45,7 @@ set splitbelow                    " sets vim splits to default right and bottom
 set splitright
 set tabstop=2
 set title                         " let vim set the terminal title
+set t_Co=256                                 " Explicitly tell vim that the terminal supports 256 colors
 set undolevels=1000      " use many muchos levels of undo
 
 set wildmenu                    " make tab completion for files/buffers act like bash
