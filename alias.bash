@@ -20,8 +20,9 @@ alias vi="vim"
 alias vmi="vim"
 alias psuh="push"
 
-# ======= plugin install ======
+# ======= plugins ======
 alias vundle="vim +PluginInstall +qall"
+alias uvundle="vim +PluginUpdate +qall"
 
 # ======= open vimrc ======
 alias vimrc="vim ~/.vimrc"
