@@ -59,21 +59,13 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    that won't be autoindented
 "
 " better visual highlight
-" " 12 is good for fg
 " change highlight text colors
-" highlight Visual ctermfg=15 ctermbg=8
-" highlight Search ctermfg=16
-
 highlight Visual ctermfg=4 ctermbg=7
 highlight Visual guifg=#2E8CCF guibg=#EEE8D6
 highlight Cursor guifg=black guibg=white
 
 " makes highlight searching very visible
 hi Search cterm=inverse ctermfg=white
-" highlight Visual ctermfg=4 ctermbg=7
-" highlight Visual guifg=#2E8CCF guibg=#EEE8D6
-" highlight Cursor guifg=black guibg=white"
-" hi Search cterm=inverse ctermfg=black
 
 
 " ======= vim-go enabling features ========
@@ -146,4 +138,3 @@ let g:syntastic_enable_signs=1
 let NERDTreeIgnore=['.DS_Store']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
