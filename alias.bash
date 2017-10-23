@@ -14,27 +14,42 @@ alias cont="git rebase --continue"
 alias skip="git rebase --skip"
 alias abort="git rebase --abort"
 
+# ======= tmux ======
+alias attach="tmux attach -t"
+alias ses="tmux new -s"
+
+# ======= plugins ======
+alias vundle="vim +PluginInstall +qall"
+alias uvundle="vim +PluginUpdate +qall"
+
+# ======= open ======
+alias vimrc="vim ~/.vimrc"
+alias als="vim $HOME/workspace/dotfiles/alias.bash"
+
+# ======= general ======
+alias rm='rm -i'
+alias rmf='rm -irfv'
+alias update='upgrade_oh_my_zsh'
+alias golang='cd go/src/github.com'
+alias goplay='cd go/src/github.com/cclulu/playground'
+
+# fancy ls command
+# -l  long format
+# -F  / after dirs, * after exe, @ after symlink
+# -G  colorize
+# -g suppress owner
+# -o suppress group
+# -h humanize sizes
+# -q print nongraphic chars as question marks
+alias ll="ls -lFGgohqa"
+alias l="ll"
+
+# ======= LOL ======
+alias gti="echo 'le beep beep' && echo && echo && gti"
+
 # ======= misspelling ======
 alias gingko="ginkgo"
 alias vi="vim"
 alias vmi="vim"
 alias v="vim"
 alias psuh="push"
-
-# ======= plugins ======
-alias vundle="vim +PluginInstall +qall"
-alias uvundle="vim +PluginUpdate +qall"
-
-# ======= open vimrc ======
-alias vimrc="vim ~/.vimrc"
-
-# ======= general ======
-alias ll='ls -lha'
-alias rm='rm -i'
-alias rmf='rm -irfv'
-alias update='upgrade_oh_my_zsh'
-alias golang='cd go/src/github.com'
-
-# ======= LOL ======
-alias gti="echo 'le beep beep' && echo && echo && gti"
-
