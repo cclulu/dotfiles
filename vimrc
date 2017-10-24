@@ -104,7 +104,6 @@ map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
-inoremap jj <ESC>
 map <leader>w   ^Ww
 map <leader>l   ^Wl
 map <leader>j   ^Wj
