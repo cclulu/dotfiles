@@ -59,7 +59,7 @@ set mouse=a                     " enable using the mouse if terminal emulator
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
-"
+
 " better visual highlight
 " change highlight text colors
 highlight Visual ctermfg=4 ctermbg=7
@@ -103,7 +103,10 @@ let g:ctrlp_custom_ignore = 'Godeps|vendor'
 map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
 
+" clear highlight with space bar
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
+
+"navigating panes with C-<h,j,k,l>
 map <leader>w   ^Ww
 map <leader>l   ^Wl
 map <leader>j   ^Wj
@@ -112,6 +115,10 @@ nmap <C-j>      <C-w>j
 nmap <C-k>      <C-w>k
 nmap <C-h>      <C-w>h
 nmap <C-l>      <C-w>l
+
+" resize panes
+" nmap <C-[>      <C-w><
+" nmap <C-]>      <C-w>>
 
 " in visual mode,"." will for each line, go into normal mode and execute the"."
 vnoremap . :norm.<CR>a
@@ -122,13 +129,6 @@ nnoremap <Space> :noh<CR>
  nnoremap <C-e> 3<C-e>
  nnoremap <C-y> 3<C-y>
 
-" ======= move lines up and down =======
-" uses ctrl-j and ctrl-k
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
 " close vim if NERDTree is the only open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -136,6 +136,6 @@ let mapleader = ","
 let maplocalleader = ";"
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:syntastic_enable_signs=1
-let NERDTreeIgnore=['.DS_Store']
+let NERDTreeIgnore=['DS_Store']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
