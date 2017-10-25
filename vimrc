@@ -7,6 +7,10 @@ syntax enable
 syntax on
 
 
+" ========== mapping leaders ==========
+let mapleader = ","
+let maplocalleader = ";"
+
 " ========== vundle ==========
 source ~/.vim/vundle/plugins.vim
 
@@ -52,6 +56,7 @@ set wildmenu                    " make tab completion for files/buffers act like
 set wildmode=list:full          " show a list when pressing tab and complete
                                 "    first full match
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore+=*tmp/*,*coverage/*,*bower_components/*,*node_modules/*,*.rvm*
 
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
@@ -59,6 +64,15 @@ set mouse=a                     " enable using the mouse if terminal emulator
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
+
+set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
+let OmniCpp_GlobalScopeSearch   = 1
+let OmniCpp_DisplayMode         = 1
+let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
+let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
+let OmniCpp_ShowAccess          = 1 "show access in pop-up
+let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
+set completeopt=menuone,menu,longest
 
 " better visual highlight
 " change highlight text colors
@@ -122,16 +136,18 @@ vnoremap . :norm.<CR>a
 "  spacebar sends no highlight
 nnoremap <Space> :noh<CR>
 " Speed up scrolling of the viewport slightly
- nnoremap <C-e> 3<C-e>
- nnoremap <C-y> 3<C-y>
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " close vim if NERDTree is the only open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let mapleader = ","
-let maplocalleader = ";"
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:syntastic_enable_signs=1
 let NERDTreeIgnore=['DS_Store']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" ======= airline =======
+let g:airline_powerline_fonts = 1
