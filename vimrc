@@ -116,10 +116,6 @@ nmap <C-k>      <C-w>k
 nmap <C-h>      <C-w>h
 nmap <C-l>      <C-w>l
 
-" resize panes
-" nmap <C-[>      <C-w><
-" nmap <C-]>      <C-w>>
-
 " in visual mode,"." will for each line, go into normal mode and execute the"."
 vnoremap . :norm.<CR>a
 
