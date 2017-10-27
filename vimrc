@@ -2,10 +2,9 @@
 filetype off                  " required
 filetype plugin indent on
 set background=dark
-set rtp+=/usr/local/go/misc/vim
+" set rtp+=/usr/local/go/misc/vim
 syntax enable 
 syntax on
-
 
 " ========== mapping leaders ==========
 let mapleader = ","
@@ -16,41 +15,44 @@ source ~/.vim/vundle/plugins.vim
 
 colorscheme solarized
 
-set autoindent                    " take indent for new line from previous line
-set autowrite
+" ========== autocmd ==========
+" turn off visual bell
+autocmd GUIEnter * set vb t_vb= " for your GUI
+autocmd VimEnter * set vb t_vb=
+
+" ========== set ==========
+set autoindent                  " take indent for new line from previous line
 set backspace=indent,eol,start
 set clipboard=unnamed
+set completeopt-=preview        " disable vim preview window
 set copyindent
-set nocompatible                  " choose no compatibility with legacy vi
-set expandtab
-set expandtab                     " expands tabs to spaces
+set expandtab                   " expands tabs to spaces
 set hidden
+set hls                         " search with highlights by default
 set hlsearch
 set ignorecase
 set incsearch
 set infercase
-set noerrorbells                  " No bells!
+set laststatus=2                " Always show statusline
+set nocompatible                " choose no compatibility with legacy vi
+set noerrorbells                " No bells!
 set noswapfile
-set hls                         " search with highlights by default
-set novisualbell                  " I said, no bells!
-set nowrap                         " don't wrap lines
+set novisualbell                " I said, no bells!
+set nowrap                      " don't wrap lines
 set number
 set ruler
-set scrolloff=2                   " adds top/bottom buffer between cursor and window
-set scrolloff=6
+set scrolloff=5                 " adds top/bottom buffer between cursor and window
 set shiftwidth=2
 set showcmd
 set showmatch
 set showmode
 set smartcase
-set smartindent                   " enable smart indentation
+set smartindent                 " enable smart indentation
 set softtabstop=2
-set splitbelow                    " sets vim splits to default right and bottom
+set splitbelow                  " sets vim splits to default right and bottom
 set splitright
 set tabstop=2
-set title                         " let vim set the terminal title
-set t_Co=256                                 " Explicitly tell vim that the terminal supports 256 colors
-set undolevels=1000      " use many muchos levels of undo
+set title                       " let vim set the terminal title
 
 set wildmenu                    " make tab completion for files/buffers act like bash
 set wildmode=list:full          " show a list when pressing tab and complete
@@ -61,11 +63,14 @@ set wildignore+=*tmp/*,*coverage/*,*bower_components/*,*node_modules/*,*.rvm*
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
 
-set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
+" Gracefully handle holding shift too long after : for common commands
+cabbrev W w
+cabbrev Q q
+cabbrev Wq wq
+cabbrev Tabe tabe
+cabbrev Tabc tabc
 
-set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
+" set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
 let OmniCpp_GlobalScopeSearch   = 1
 let OmniCpp_DisplayMode         = 1
 let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
@@ -74,6 +79,7 @@ let OmniCpp_ShowAccess          = 1 "show access in pop-up
 let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
 set completeopt=menuone,menu,longest
 
+" ======= highlighting ========
 " better visual highlight
 " change highlight text colors
 highlight Visual ctermfg=4 ctermbg=7
@@ -82,7 +88,6 @@ highlight Cursor guifg=black guibg=white
 
 " makes highlight searching very visible
 hi Search cterm=inverse ctermfg=white
-
 
 " ======= vim-go enabling features ========
 let g:go_auto_type_info = 1
@@ -97,29 +102,37 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 
-" ======= add auto pairs shortcut ======
-let g:AutoPairsShortcutToggle = '<C-t>'
-
 " ====== syntastic options set =====
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
 let g:syntastic_go_checkers = ['go', 'gofmt']
 
+" ====== airline =====
+let g:airline_powerline_fonts = 1
+
 " ====== ignore certain folders with ctrl+p =====
 if exists('g:ctrlp_user_command')
   unlet g:ctrlp_user_command
 endif
 let g:ctrlp_custom_ignore = 'Godeps|vendor'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" ======= Remapping commands to short cut keys ========
+"======= Remapping commands to short cut keys ========
+
+"         ======= NERDTREE ========
 " Toggle nerd tree file tree
 map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
 
-" clear highlight with space bar
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
+" close vim if NERDTree is the only open buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+let NERDTreeIgnore=['DS_Store']
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+"         ======= Navigations ========
 "navigating panes with C-<h,j,k,l>
 map <leader>w   ^Ww
 map <leader>l   ^Wl
@@ -130,24 +143,19 @@ nmap <C-k>      <C-w>k
 nmap <C-h>      <C-w>h
 nmap <C-l>      <C-w>l
 
-" in visual mode,"." will for each line, go into normal mode and execute the"."
-vnoremap . :norm.<CR>a
+"         ======= Misc. ========
 
-"  spacebar sends no highlight
-nnoremap <Space> :noh<CR>
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" close vim if NERDTree is the only open buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" in visual mode,"." will for each line, go into normal mode and execute the"."
+vnoremap . :norm.<CR>a
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:syntastic_enable_signs=1
-let NERDTreeIgnore=['DS_Store']
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+" clear highlight with space bar
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 
-" ======= airline =======
-let g:airline_powerline_fonts = 1
+"indent/unindent visual mode selection with tab/shift+tab
+vmap <tab> >gv
+vmap <s-tab> <gv
+
