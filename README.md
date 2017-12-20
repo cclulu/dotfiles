@@ -1,3 +1,11 @@
-Workstation
-
-basic things i would use to start working
+# Workstation 
+   - ### Basic things for my vim & terminal configuration
+ 
+# Install
+  #### clone repo
+  
+  ``` bash 
+ cd $PATH_TO_REPO/dotfiles
+./install
+  ```
+ 
