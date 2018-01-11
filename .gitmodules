@@ -1,3 +1,6 @@
+[submodule "ag.vim"]
+	path = vim/bundle/ag.vim
+	url = https://github.com/rking/ag.vim
 [submodule "Dockerfile"]
 	path = vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim
