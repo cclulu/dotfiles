@@ -63,6 +63,8 @@ set wildignore+=*tmp/*,*coverage/*,*bower_components/*,*node_modules/*,*.rvm*
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
 
+set undofile
+set undodir=~/.vim/undodir
 " Gracefully handle holding shift too long after : for common commands
 cabbrev W w
 cabbrev Q q
