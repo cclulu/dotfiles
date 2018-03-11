@@ -22,6 +22,9 @@
 [submodule "nerdtree-git-plugin"]
 	path = vim/bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "rainbow"]
+	path = vim/bundle/rainbow
+	url = https://github.com/luochen1990/rainbow.git
 [submodule "syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git

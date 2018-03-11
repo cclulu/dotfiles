@@ -65,21 +65,6 @@ set mouse=a                     " enable using the mouse if terminal emulator
 
 set undofile
 set undodir=~/.vim/undodir
-" Gracefully handle holding shift too long after : for common commands
-cabbrev W w
-cabbrev Q q
-cabbrev Wq wq
-cabbrev Tabe tabe
-cabbrev Tabc tabc
-
-" set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
-let OmniCpp_GlobalScopeSearch   = 1
-let OmniCpp_DisplayMode         = 1
-let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
-let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-let OmniCpp_ShowAccess          = 1 "show access in pop-up
-let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
-set completeopt=menuone,menu,longest
 
 " ======= highlighting ========
 " better visual highlight
@@ -154,6 +139,12 @@ nmap <C-j>      <C-w>j
 nmap <C-k>      <C-w>k
 nmap <C-h>      <C-w>h
 nmap <C-l>      <C-w>l
+
+" ======= always rainbow parens ========
+let g:rainbow_conf = {
+\   'ctermfgs': ['blue', 'red', 'cyan', 'magenta', 'yellow', 'white'],
+\}
+let g:rainbow_active = 1
 
 "         ======= Misc. ========
 
