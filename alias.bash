@@ -7,6 +7,7 @@ alias gaa="git add -A"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
+
 # rebase #
 alias amend="git commit --amend --reset-author"
 alias continue="git rebase --continue"
@@ -35,13 +36,10 @@ alias goplay='cd go/src/github.com/cclulu/playground'
 
 # fancy ls command
 # -l  long format
-# -F  / after dirs, * after exe, @ after symlink
 # -G  colorize
-# -g suppress owner
-# -o suppress group
 # -h humanize sizes
 # -q print nongraphic chars as question marks
-alias ll="ls -lFGgohqa"
+alias ll="ls -laGhq"
 alias l="ll"
 
 # ======= LOL ======
@@ -51,6 +49,7 @@ alias gti="echo 'le beep beep' && echo && echo && gti"
 alias gingko="ginkgo"
 alias vi="vim"
 alias vmi="vim"
+alias cim="vim"
 alias v="vim"
 alias psuh="push"
 alias gdc="gc"
