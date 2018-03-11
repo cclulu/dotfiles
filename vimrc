@@ -101,8 +101,7 @@ let $GINKGO_EDITOR_INTEGRATION = "true"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
-let g:syntastic_go_checkers = ['go', 'gofmt', 'golint', 'govet', 'gometalinter']
-let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
+let g:syntastic_go_checkers = ['go', 'gofmt']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " ====== airline =====
@@ -141,10 +140,30 @@ nmap <C-h>      <C-w>h
 nmap <C-l>      <C-w>l
 
 " ======= always rainbow parens ========
-let g:rainbow_conf = {
-\   'ctermfgs': ['blue', 'red', 'cyan', 'magenta', 'yellow', 'white'],
-\}
 let g:rainbow_active = 1
+
+let g:rainbow_conf = {
+\ 'guifgs':['royalblue3','darkorange3', 'seagreen3', 'firebrick'],
+\ 'ctermfgs': ['blue', 'red', 'cyan', 'magenta', 'yellow', 'white'],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	'separately': {
+\		'*': {},
+\		'tex': {
+\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\		},
+\		'lisp': {
+\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\		},
+\		'vim': {
+\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\		},
+\		'html': {
+\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\		},
+\		'css': 0,
+\	}
+\}
 
 "         ======= Misc. ========
 
