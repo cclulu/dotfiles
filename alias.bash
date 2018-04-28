@@ -7,6 +7,7 @@ alias gaa="git add -A"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
+alias co="git checkout"
 
 # rebase #
 alias amend="git commit --amend --reset-author"
@@ -32,7 +33,7 @@ alias rm='rm -i'
 alias rmf='rm -irfv'
 alias update='upgrade_oh_my_zsh'
 alias golang='cd go/src/github.com'
-alias goplay='cd go/src/github.com/cclulu/playground'
+alias goplay='cd go/src/github.com/cclulu/goplayground'
 
 # fancy ls command
 # -l  long format
