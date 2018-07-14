@@ -46,3 +46,6 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - mkdir ~/.vim/undodir
+    # fast key repeat rate, requires reboot to take effect
+  - defaults write ~/Library/Preferences/.GlobalPreferences KeyRepeat -int 1
+  - defaults write ~/Library/Preferences/.GlobalPreferences InitialKeyRepeat -int 15

@@ -66,6 +66,13 @@ set mouse=a                     " enable using the mouse if terminal emulator
 set undofile
 set undodir=~/.vim/undodir
 
+
+" ======= :commands WQ ========
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
 " ======= highlighting ========
 " better visual highlight
 " change highlight text colors
