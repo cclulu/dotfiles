@@ -34,6 +34,7 @@ alias rmf='rm -irfv'
 alias update='upgrade_oh_my_zsh'
 alias golang='cd go/src/github.com'
 alias goplay='cd go/src/github.com/cclulu/goplayground'
+alias de='direnv edit'
 
 # fancy ls command
 # -l  long format
@@ -54,3 +55,4 @@ alias cim="vim"
 alias v="vim"
 alias psuh="push"
 alias gdc="gc"
+alias mivm="mvim"

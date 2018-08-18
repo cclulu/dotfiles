@@ -11,7 +11,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'ekalinin/Dockerfile.vim'

@@ -113,6 +113,10 @@ let g:syntastic_go_checkers = ['go', 'gofmt']
 " ====== airline =====
 let g:airline_powerline_fonts = 1
 
+
+" ====== vim-signify =====
+let g:signify_vcs_list = [ 'git' ]
+
 " ====== ignore certain folders with ctrl+p =====
 if exists('g:ctrlp_user_command')
   unlet g:ctrlp_user_command
@@ -171,7 +175,7 @@ let g:rainbow_conf = {
 \	}
 \}
 
-"         ======= Misc. ========
+" ======= Misc. ========
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 3<C-e>
