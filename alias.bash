@@ -56,3 +56,9 @@ alias v="vim"
 alias psuh="push"
 alias gdc="gc"
 alias mivm="mvim"
+
+whoseport() {
+  lsof -i ":$1" | grep LISTEN
+}
+
+# docker run --rm -it -v $(pwd):/go/src/webserver -w /go/src/webserver golang:1.8.3 /bin/bash
