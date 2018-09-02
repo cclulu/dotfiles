@@ -113,6 +113,9 @@ let g:syntastic_go_checkers = ['go', 'gofmt']
 " ====== airline =====
 let g:airline_powerline_fonts = 1
 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 " ====== vim-signify =====
 let g:signify_vcs_list = [ 'git' ]
