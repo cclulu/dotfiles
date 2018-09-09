@@ -23,35 +23,35 @@ autocmd VimEnter * set vb t_vb=
 " ========== set ==========
 set autoindent                  " take indent for new line from previous line
 set backspace=indent,eol,start
-set clipboard=unnamed
+set clipboard=unnamed           " let you use the os clipboard when yanking or putting
 set completeopt-=preview        " disable vim preview window
-set copyindent
+set copyindent                  " copy formatting that is applied to text
 set expandtab                   " expands tabs to spaces
-set hidden
+set hidden                      " will hide the display of needing ! to either save
 set hls                         " search with highlights by default
-set hlsearch
-set ignorecase
-set incsearch
+set hlsearch                    " search with highlights by default idk why both i just put ...
+set incsearch                   " incremental search
 set infercase
 set laststatus=2                " Always show statusline
 set nocompatible                " choose no compatibility with legacy vi
 set noerrorbells                " No bells!
-set noswapfile
+set noswapfile                  " do not create swp files
 set novisualbell                " I said, no bells!
 set nowrap                      " don't wrap lines
-set number
-set ruler
+set number                      " show line numbers
+set ruler                       " show line number, column number, at the bottom screen
 set scrolloff=5                 " adds top/bottom buffer between cursor and window
 set shiftwidth=2
-set showcmd
-set showmatch
-set showmode
-set smartcase
+set showcmd                     " show command you are about to run
+set showmatch                   " show the matching brace
+set showmode                    " show what mode you are currently in
+set ignorecase                  " make searching case insensitive
+set smartcase                   " when used with ignorecase if a pattern contains an uppercase letter it is case senseitive other it is not
 set smartindent                 " enable smart indentation
 set softtabstop=2
-set splitbelow                  " sets vim splits to default right and bottom
-set splitright
-set tabstop=2
+set splitbelow                  " sets vim splits to default  bottom
+set splitright                  " sets vim splits to default right
+set tabstop=2                   " default is 2 spaces
 set title                       " let vim set the terminal title
 
 set wildmenu                    " make tab completion for files/buffers act like bash
@@ -63,11 +63,12 @@ set wildignore+=*tmp/*,*coverage/*,*bower_components/*,*node_modules/*,*.rvm*
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
 
-set undofile
-set undodir=~/.vim/undodir
+set undofile                    " permanent undo turned on
+set undodir=~/.vim/undodir      " permanent undo needs a file to save the undo's
 
 
 " ======= :commands WQ ========
+" lets you save and quit if held shift key to long
 :command WQ wq
 :command Wq wq
 :command W w
@@ -140,6 +141,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeIgnore=['DS_Store']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeAutoDeleteBuffer= 1
 
 "         ======= Navigations ========
 "navigating panes with C-<h,j,k,l>
