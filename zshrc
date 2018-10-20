@@ -1,5 +1,6 @@
-export PATH="/usr/local/bin:$PATH"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/localadmin/bin:~/bin
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/cuahuctemocosorio/.oh-my-zsh
@@ -19,7 +20,7 @@ export PATH=$HOME/bin:$PATH
 
 export EVENT_NOKQUEUE=1
 
-# rupa/z - jump around 
+# rupa/z - jump around
 . ~/z/z.sh
 
 source $ZSH/oh-my-zsh.sh
