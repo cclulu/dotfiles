@@ -33,7 +33,7 @@ alias rm='rm -i'
 alias rmf='rm -irfv'
 alias update='upgrade_oh_my_zsh'
 alias golang='cd go/src/github.com'
-alias goplay='cd go/src/github.com/cclulu/goplayground'
+alias goplay='cd ~/go/src/github.com/cclulu/goplayground'
 alias de='direnv edit'
 
 # fancy ls command
