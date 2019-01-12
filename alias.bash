@@ -45,7 +45,6 @@ alias ll="ls -laGhq"
 alias l="ll"
 
 # ======= LOL ======
-alias gti="echo 'le beep beep' && echo && echo && gti"
 
 # ======= misspelling ======
 alias gingko="ginkgo"
