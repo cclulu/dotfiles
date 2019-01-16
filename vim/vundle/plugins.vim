@@ -37,6 +37,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tomtom/tlib_vim'
 Plugin 'trayo/vim-ginkgo-snippets'
 Plugin 'trayo/vim-gomega-snippets'
+Plugin 'cclulu/vim-go-misc-snippets'
 "------
 
 " All of your Plugins must be added before the following line
