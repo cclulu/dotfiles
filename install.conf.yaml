@@ -33,6 +33,9 @@
     ~/.vimrc:
       force: true
       path: vimrc
+    ~/.gitconfig:
+      force: true
+      path: gitconfig
       # my custom terminal prompt
       # with a modified standard prompt
     ~/.oh-my-zsh/themes/pygmalion.zsh-theme:

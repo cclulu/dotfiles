@@ -1,13 +1,13 @@
 # ======= git short cuts ======
 alias pull="git pull -r"
 alias push="git push"
-alias gdi="git diff"
+alias gdi="git difftool"
 alias gapa='git add --patch'
 alias gaa="git add -A"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
-alias co="git checkout"
+alias co="checkout"
 
 # rebase #
 alias amend="git commit --amend --reset-author"

@@ -1,0 +1,24 @@
+[alias]
+    sts = status
+    co = checkout
+    llog = log --date=local
+    flog = log --pretty=fuller --decorate
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lol = log --graph --decorate --oneline
+    lola = log --graph --decorate --oneline --all
+    undo = reset --soft HEAD^
+[user]
+	email = cclulu11@gmail.com
+	name = cclulu
+[credential]
+	helper = cache --timeout=432000
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /Users/cuahuctemocosorio/bin/icdiff --line-numbers --highlight $LOCAL $REMOTE
+[core]
+	excludesfile = ~/.gitignore_global
+[hub]
+	protocol = https

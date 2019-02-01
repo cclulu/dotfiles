@@ -3,7 +3,7 @@ filetype off                  " required
 filetype plugin indent on
 set background=dark
 " set rtp+=/usr/local/go/misc/vim
-syntax enable 
+syntax enable
 syntax on
 
 " ========== mapping leaders ==========
