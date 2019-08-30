@@ -15,6 +15,15 @@
 #installing powerline fonts
 # - shell:
 #   - git clone https://github.com/powerline/fonts ~/workspace/
+#
+#installing install powerline10k theme need to figure out how to git clone ~~~~~~~~
+# - shell:
+#   - git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+#   the font I need on my iterm to be able to use my custom .p10k.zsh file
+#   https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf
+#   https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf
+#   https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf
+#   https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
 
 - link:
      #tmux configuration
@@ -38,6 +47,7 @@
       path: gitconfig
       # my custom terminal prompt
       # with a modified standard prompt
+      # TODO: remove when can auto install p10k theme
     ~/.oh-my-zsh/themes/pygmalion.zsh-theme:
       force: true
       path: pygmalion.zsh-theme
@@ -45,6 +55,10 @@
     ~/z:
       force: true
       path: z
+      # setup p10k file for new theme
+    ~/.p10k.zsh:
+      force: true
+      path: p10k.zsh
 
 #installing vim plugins with alias
 # - shell:

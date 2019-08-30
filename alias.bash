@@ -60,4 +60,10 @@ whoseport() {
   lsof -i ":$1" | grep LISTEN
 }
 
+function up(){
+    i=${1:-1}
+    while ((i--)); do
+      cd ..
+    done
+}
 # docker run --rm -it -v $(pwd):/go/src/webserver -w /go/src/webserver golang:1.8.3 /bin/bash

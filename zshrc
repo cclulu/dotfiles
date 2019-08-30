@@ -7,7 +7,8 @@ export ZSH=/Users/cuahuctemocosorio/.oh-my-zsh
 
 export EDITOR=vim
 
-ZSH_THEME="pygmalion"
+# ZSH_THEME="pygmalion"
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -36,3 +37,6 @@ eval "$(rbenv init -)"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 eval "$(direnv hook zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
