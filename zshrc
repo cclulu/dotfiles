@@ -15,7 +15,10 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # setup GO
 export GOPATH="$HOME/go"
-export PATH=$GOPATH/bin:$PATH
+export GO="/usr/local/Cellar/go/1.13.8"
+export GOROOT="$GO/libexec"
+# export PATH=$GOPATH/bin:$PATH
+export PATH=$GO/bin:$GOPATH/bin:$PATH
 
 export PATH=$HOME/bin:$PATH
 
