@@ -44,7 +44,8 @@ alias de='direnv edit'
 alias ll="ls -laGhq"
 alias l="ll"
 
-# ======= LOL ======
+# ======= python ======
+alias python="/usr/bin/python3"
 
 # ======= misspelling ======
 alias gingko="ginkgo"

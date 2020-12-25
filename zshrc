@@ -15,9 +15,11 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # setup GO
 export GOPATH="$HOME/go"
-export GO="/usr/local/Cellar/go/1.13.8"
+# export GO="/usr/local/Cellar/go/1.13.8"
+export GOVERSION="$(brew info go | cut -d' ' -f 3 | head -n 1)"
+export GO="/usr/local/Cellar/go/${GOVERSION}"
+
 export GOROOT="$GO/libexec"
-# export PATH=$GOPATH/bin:$PATH
 export PATH=$GO/bin:$GOPATH/bin:$PATH
 
 export PATH=$HOME/bin:$PATH
@@ -43,3 +45,4 @@ eval "$(direnv hook zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+export PATH="/usr/local/sbin:$PATH"

@@ -88,16 +88,17 @@ hi Search cterm=inverse ctermfg=white
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "gofmt"
 let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+" let g:go_fmt_fail_silently = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
+let g:go_highlight_extra_types = 0
 let g:go_highlight_fields = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_function_arguments = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
+let g:go_highlight_operators = 0
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
@@ -109,7 +110,7 @@ let $GINKGO_EDITOR_INTEGRATION = "true"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
-let g:syntastic_go_checkers = ['go', 'gofmt']
+let g:syntastic_go_checkers = ['go', 'gofmt', 'errcheck']
 
 " ====== airline =====
 let g:airline_powerline_fonts = 1
@@ -179,6 +180,15 @@ let g:rainbow_conf = {
 \		'css': 0,
 \	}
 \}
+
+" ======= Formatters ========
+" au Filetype javascript setlocal formatprg=prettier
+" au Filetype javascript.jsx setlocal formatprg=prettier
+" au Filetype typescript setlocal formatprg=prettier\ --parser\ typescript
+" au Filetype html setlocal formatprg=js-beautify\ --type\ html
+" au Filetype scss setlocal formatprg=prettier\ --parser\ css
+" au Filetype css setlocal formatprg=prettier\ --parser\ css
+
 
 " ======= Misc. ========
 
