@@ -56,6 +56,10 @@ alias v="vim"
 alias psuh="push"
 alias gdc="gc"
 alias mivm="mvim"
+alias nivm="nvim"
+alias nvm="nvim"
+
+# ======= neovim ======
 
 whoseport() {
   lsof -i ":$1" | grep LISTEN
